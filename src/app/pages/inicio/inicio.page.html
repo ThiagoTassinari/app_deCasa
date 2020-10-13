@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>inicio</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <!--Faça sua busca-->
+  <ion-item>
+    <!-- <ion-label class="ion-text-center" position="floating" >Faça sua busca</ion-label> -->
+    <ion-input class="ion-text-center" placeholder="Faça sua busca"></ion-input>
+  </ion-item>
+
+  <!--Slides-->
+  <ion-slides pager="true" [options]="slideOpts" class="primary-font">
+    <ion-slide class="ion-padding">
+        <div class="bg-img">
+            <ion-img src="./assets/slides/banner1.jpg"></ion-img>
+        </div>
+    </ion-slide>
+    <ion-slide class="ion-padding">
+        <div class="bg-img">
+            <ion-img src="./assets/slides/banner2.jpg"></ion-img>
+        </div>
+    </ion-slide>
+</ion-slides>
+
+</ion-content>
