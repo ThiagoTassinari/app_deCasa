@@ -13,7 +13,6 @@ export class InicioPage implements OnInit {
     speed: 400
 };
 
-
 cart = [];
 items = [];
 

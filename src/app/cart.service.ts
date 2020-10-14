@@ -7,30 +7,30 @@ export class CartService {
 
   private data = [
     {
-      category: 'Pizza',
+      category: 'Informática',
       expanded: true,
       products: [
-        {id: 0, name: 'Salami', price: '8' },
-        {id: 1, name: 'Classic', price: '5' },
-        {id: 2, name: 'Bahiana', price: '2' },
-        {id: 3, name: 'Calabresa', price: '10' },
+        {id: 0, name: 'Formatação de PC', price: '60' },
+        {id: 1, name: 'Backup', price: '50' },
+        {id: 2, name: 'Instalação de softwares', price: '40' },
+        {id: 3, name: 'Instalação de hardwares', price: '80' },
       ]
     },
     {
-      category: 'Pasta',
+      category: 'Festas e Eventos',
       products: [
-        {id: 4, name: 'Bolonhesa', price: '11' },
-        {id: 5, name: 'Queijo', price: '3' },
-        {id: 6, name: 'Calabresa', price: '7' },
+        {id: 4, name: 'Casamento', price: '1100' },
+        {id: 5, name: 'Aniversário de 15 anos', price: '800' },
+        {id: 6, name: 'Confraternização', price: '900' },
       ]
     },
     {
-      category: 'Salad',
+      category: 'Assistência Técnica',
       products: [
-        {id: 7, name: 'Comum', price: '4' },
-        {id: 8, name: 'Caeser', price: '6' },
-        {id: 9, name: 'Sensacional', price: '5' },
-        {id: 10, name: 'Premium', price: '2' },
+        {id: 7, name: 'Ventilador', price: '110' },
+        {id: 8, name: 'Máquina de lavar', price: '250' },
+        {id: 9, name: 'Geladeira', price: '300' },
+        {id: 10, name: 'Fogão', price: '150' },
       ]
     }
   ];
