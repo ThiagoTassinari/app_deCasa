@@ -25,12 +25,20 @@ export class CartService {
       ]
     },
     {
+      category: 'Obras e reformas',
+      products: [
+        { id: 7, name: 'Contra Piso', price: '200' },
+        { id: 8, name: 'Gesso', price: '250' },
+        { id: 9, name: 'Pintura', price: '100' } 
+      ]
+    },
+    {
       category: 'Assistência Técnica',
       products: [
-        {id: 7, name: 'Ventilador', price: '110' },
-        {id: 8, name: 'Máquina de lavar', price: '250' },
-        {id: 9, name: 'Geladeira', price: '300' },
-        {id: 10, name: 'Fogão', price: '150' },
+        {id: 10, name: 'Ventilador', price: '110' },
+        {id: 11, name: 'Máquina de lavar', price: '250' },
+        {id: 12, name: 'Geladeira', price: '300' },
+        {id: 13, name: 'Fogão', price: '150' },
       ]
     }
   ];
