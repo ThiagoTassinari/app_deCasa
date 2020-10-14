@@ -9,6 +9,7 @@ export class CartService {
     {
       category: 'Informática',
       expanded: true,
+      icon: 'laptop-outline',
       products: [
         {id: 0, name: 'Formatação de PC', price: '60' },
         {id: 1, name: 'Backup', price: '50' },
@@ -18,6 +19,7 @@ export class CartService {
     },
     {
       category: 'Festas e Eventos',
+      icon: 'cafe-outline',
       products: [
         {id: 4, name: 'Casamento', price: '1100' },
         {id: 5, name: 'Aniversário de 15 anos', price: '800' },
@@ -26,6 +28,7 @@ export class CartService {
     },
     {
       category: 'Obras e reformas',
+      icon: 'build-outline',
       products: [
         { id: 7, name: 'Contra Piso', price: '200' },
         { id: 8, name: 'Gesso', price: '250' },
@@ -34,6 +37,7 @@ export class CartService {
     },
     {
       category: 'Assistência Técnica',
+      icon: 'globe-outline',
       products: [
         {id: 10, name: 'Ventilador', price: '110' },
         {id: 11, name: 'Máquina de lavar', price: '250' },

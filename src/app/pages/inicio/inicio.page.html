@@ -6,77 +6,93 @@
         <ion-label>Informe sua localização</ion-label>
         <ion-icon name="location-outline"></ion-icon>
       </ion-button>
-  </ion-buttons>
+    </ion-buttons>
   </ion-toolbar>
 
 </ion-header>
 
 <ion-content>
 
-  <!--Faça sua busca-->
-  <ion-item>
-    <!-- <ion-label class="ion-text-center" position="floating" >Faça sua busca</ion-label> -->
-    <ion-input class="ion-text-center" placeholder="Faça sua busca"></ion-input>
-  </ion-item>
-
   <!--Slides-->
   <ion-slides pager="true" [options]="slideOpts" class="primary-font">
     <ion-slide class="ion-padding">
-        <div class="bg-img">
-            <ion-img src="./assets/slides/banner1.jpg"></ion-img>
-        </div>
+      <div class="bg-img">
+        <ion-img src="./assets/slides/banner1.jpg"></ion-img>
+      </div>
     </ion-slide>
     <ion-slide class="ion-padding">
-        <div class="bg-img">
-            <ion-img src="./assets/slides/banner2.jpg"></ion-img>
-        </div>
-    </ion-slide>
-</ion-slides>
-
-<div class="ion-padding">
-
-
-<ion-row> 
-  <ion-col >
-    <div class="ion-float-left">
-      <strong>Escolha um Grupo</strong> 
-  </div>
-
-    <div class="ion-float-right">
-      <a color="primary"><b><u>Ver todos</u></b></a>
-    </div>
-    </ion-col>
-</ion-row>
-
-<!-----------------------------Slides dos grupos--------------------->
-<div *ngFor="let cat of items" class="category-block">
-
-  <ion-row no-padding class="category-banner">
-    <ion-col text-left button tappable (click)="cat.expanded = !cat.expanded" align-self-center>
-      {{ cat.category }}
-    </ion-col>
-  </ion-row>
-
-  <ion-slides [options]="sliderConfig">
-    <ion-slide *ngFor="let product of cat.products">
-      <div *ngIf="cat.expanded">
-        <ion-card>
-          <ion-card-header>
-            <ion-card-title>
-              {{ product.name }} - ${{ product.price }}
-            </ion-card-title>
-            <ion-card-content>
-              <img src="https://via.placeholder.com/100x100">
-              <ion-button expand="full" (click)="addToCart(product)">Aicionando no carrinho</ion-button>
-            </ion-card-content>
-          </ion-card-header>
-        </ion-card>
-
+      <div class="bg-img">
+        <ion-img src="./assets/slides/banner2.jpg"></ion-img>
       </div>
     </ion-slide>
   </ion-slides>
 
-</div>
+    <!--Faça sua busca-->
+    <ion-item>
+      <ion-input class="ion-text-center" placeholder="Faça sua busca"></ion-input>
+    </ion-item>
 
-</div>
+  <!--------------Descrição dos Grupos---------------->
+  <div class="ion-padding">
+    <ion-row>
+      <ion-col>
+        <div class="ion-float-left">
+          <strong>Escolha um Grupo</strong>
+        </div>
+
+        <!-- Botão Ver todos -->
+        <!-- <div class="ion-float-right">
+          <a color="primary"><b><u>Ver todos</u></b></a>
+        </div> -->
+
+      </ion-col>
+    </ion-row>
+
+    <!-----------------------------Slides dos grupos--------------------->
+
+    <div class="category-block">
+      <!-- <ion-row no-padding class="category-banner">
+    <ion-col text-left button tappable (click)="cat.expanded = !cat.expanded" align-self-center>
+      {{ cat.category }}
+    </ion-col>
+  </ion-row> -->
+
+        <!-- <ion-slide *ngFor="let grupo of items">
+          <div>
+            <ion-card>
+              <ion-card-header>
+                <ion-card-title>
+                </ion-card-title>
+                <ion-card-content>
+                  <ion-icon name="laptop-outline" size="large"></ion-icon>
+                  <h5>
+                    {{ grupo.category }}
+                  </h5>
+                </ion-card-content>
+              </ion-card-header>
+            </ion-card>
+
+          </div> -->
+
+        <ion-grid>
+          <ion-row>
+            <ion-col size="4" *ngFor="let grupo of items">
+              <div>
+                <ion-card>
+                  <ion-card-header>
+                    <ion-card-title></ion-card-title>
+                      <ion-card-content>
+                      {{grupo.category}}    
+                      <ion-icon size="large"[name]="grupo.icon"></ion-icon>  
+                    </ion-card-content>               
+                  </ion-card-header>
+                </ion-card>
+              </div> 
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+
+    </div>
+
+  </div>
 </ion-content>

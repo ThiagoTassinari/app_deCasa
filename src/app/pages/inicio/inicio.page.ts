@@ -10,17 +10,14 @@ import { Component, OnInit } from '@angular/core';
 export class InicioPage implements OnInit {
   slideOpts = {
     initialSlide: 0,
-    speed: 400
+    speed: 400,
+    slidesPerColumn: 1,
+    watchSlidesProgress: true,
 };
 
 cart = [];
 items = [];
 
-sliderConfig = {
-  spaceBetween: 9,
-  centeredSlides: true,
-  slidesPerView: 1.3
-}
 
 constructor(private cartService: CartService, private router: Router) { }
 
