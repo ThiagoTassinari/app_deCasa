@@ -1,3 +1,5 @@
+import { Router } from '@angular/router';
+import { CartService } from './../../cart.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -10,9 +12,29 @@ export class InicioPage implements OnInit {
     initialSlide: 0,
     speed: 400
 };
-  constructor() { }
 
-  ngOnInit() {
+
+cart = [];
+items = [];
+
+sliderConfig = {
+  spaceBetween: 9,
+  centeredSlides: true,
+  slidesPerView: 1.3
+}
+
+constructor(private cartService: CartService, private router: Router) { }
+
+ngOnInit() {
+  this.cart = this.cartService.getCart();
+  this.items = this.cartService.getProducts();
+}
+
+addToCart(product) {
+  this.cartService.addProduct(product);
+}
+
+openCart() {
+  this.router.navigate(['cart']);
   }
-
 }

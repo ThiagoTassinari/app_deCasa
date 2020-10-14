@@ -1,6 +1,5 @@
-import { GrupoService } from '../inicio/grupo.service';
-import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+
 
 @Component({
   selector: 'app-home',
@@ -8,8 +7,5 @@ import { Router } from '@angular/router';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-
-  constructor(){}
-
 
 }
