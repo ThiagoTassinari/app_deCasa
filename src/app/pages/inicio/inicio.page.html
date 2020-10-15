@@ -27,10 +27,10 @@
     </ion-slide>
   </ion-slides>
 
-    <!--Faça sua busca-->
-    <ion-item>
-      <ion-input class="ion-text-center" placeholder="Faça sua busca"></ion-input>
-    </ion-item>
+  <!--Faça sua busca-->
+  <ion-item>
+    <ion-input class="ion-text-center" placeholder="Faça sua busca"></ion-input>
+  </ion-item>
 
   <!--------------Descrição dos Grupos---------------->
   <div class="ion-padding">
@@ -57,7 +57,7 @@
     </ion-col>
   </ion-row> -->
 
-        <!-- <ion-slide *ngFor="let grupo of items">
+      <!-- <ion-slide *ngFor="let grupo of items">
           <div>
             <ion-card>
               <ion-card-header>
@@ -74,23 +74,26 @@
 
           </div> -->
 
-        <ion-grid>
-          <ion-row>
-            <ion-col size="4" *ngFor="let grupo of items">
-              <div>
-                <ion-card>
-                  <ion-card-header>
-                    <ion-card-title></ion-card-title>
-                      <ion-card-content>
-                      {{grupo.category}}    
-                      <ion-icon size="large"[name]="grupo.icon"></ion-icon>  
-                    </ion-card-content>               
-                  </ion-card-header>
-                </ion-card>
-              </div> 
-            </ion-col>
-          </ion-row>
-        </ion-grid>
+      <ion-grid>
+        <ion-row>
+          <ion-col size="4" *ngFor="let grupo of items">
+            <div class="ion-text-center">
+              <ion-card>
+                <ion-card-header>
+                  <ion-card-content>
+                    <ion-icon size="large" [name]="grupo.icon"></ion-icon>
+                    <ion-card-title style="font-size: 18px" class="ion-text-wrap">
+                      <strong>
+                        {{grupo.category}}
+                      </strong>
+                    </ion-card-title>
+                  </ion-card-content>
+                </ion-card-header>
+              </ion-card>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
 
     </div>
 

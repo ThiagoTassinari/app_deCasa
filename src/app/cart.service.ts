@@ -44,7 +44,36 @@ export class CartService {
         {id: 12, name: 'Geladeira', price: '300' },
         {id: 13, name: 'Fogão', price: '150' },
       ]
-    }
+    },
+    {
+      category: 'Fretes e Entregas',
+      icon: 'bus-outline',
+      products: [
+        { id: 14, name: 'Caminhão Toco' },
+        { id: 15, name: 'Caminhão Truck' },
+        { id: 16, name: 'Carretas' },
+        { id: 17, name: 'Motoboy' },
+      ]
+    },
+    {
+      category: 'Idosos - Serviços especializados',
+      icon: 'body-outline',
+      products: [
+        { id: 18, name: 'Cuidador de idosos' },
+        { id: 19, name: 'Fisioterapia domiciliar' },
+        { id: 20, name: 'Terapia ocupacional' }
+      ]
+    },
+    {
+      category: 'Engenharia e Arquitetura',
+      icon: 'settings-outline',
+      product: [
+        { id: 21, name: 'Laudos- Eng.Civil' },
+        { id: 22, name: 'Projeto Água e Esgoto' },
+        { id: 23, name: 'Projeto de climatização'},
+        { id: 24, name: 'Projeto de  arquitetura '},
+      ]
+    },
   ];
 
   private cart = [];
