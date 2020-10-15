@@ -48,7 +48,8 @@ ion-icon {
 }
 
 ion-card-content {
-  box-sizing:inherit;
+  width: 100%;
+  height: min-content;
 }
 // .category.banner {
 //   border-left: 8px solid var(--ion-color-secondary);
