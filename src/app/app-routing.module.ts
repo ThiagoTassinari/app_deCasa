@@ -15,6 +15,10 @@ const routes: Routes = [
     path: 'cart',
     loadChildren: () => import('./pages/cart/cart.module').then( m => m.CartPageModule)
   },
+  {
+    path: 'grupo-service',
+    loadChildren: () => import('./pages/grupo-service/grupo-service.module').then( m => m.GrupoServicePageModule)
+  },
 ];
 
 @NgModule({
