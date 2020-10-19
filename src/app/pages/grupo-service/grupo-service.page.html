@@ -1,9 +1,51 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>grupo_service</ion-title>
+    <ion-title>Classes</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
 
+  <!--------------Descrição das Classes---------------->
+
+  <div class="ion-padding">
+    <ion-row>
+      <ion-col>
+        <div class="ion-float-left">
+          <strong>Escolha uma Classe</strong>
+        </div>
+      </ion-col>
+    </ion-row>
+
+    <ion-icon name="list-sharp"></ion-icon><ion-icon name="apps-sharp"></ion-icon>
+
+    <!------------------------- Cards das Classes de Serviços --------------------->
+    <div class="category-block">
+      <ion-grid>
+        <ion-row>
+          <ion-col size="4" *ngFor="let classe_informatica of classes">
+            <div class="ion-text-center">
+              <ion-card>
+                <ion-card-header>
+                  <ion-card-title>
+                    <ion-icon size="large" [name]="classe_informatica.icon"></ion-icon>
+                    {{ classe_informatica.name }}
+                  </ion-card-title>
+                </ion-card-header>
+
+                <ion-card-content>
+
+                </ion-card-content>
+
+              </ion-card>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+    </div>
+  </div>
+
 </ion-content>
+
+<ion-tabs routerLink="/tabs/home/detail">Next</ion-tabs>

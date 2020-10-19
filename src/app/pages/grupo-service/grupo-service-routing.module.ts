@@ -7,11 +7,12 @@ const routes: Routes = [
   {
     path: '',
     component: GrupoServicePage
-  }
+  },
 ];
+
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class GrupoServicePageRoutingModule {}
+export class GrupoServicePageRoutingModule { }

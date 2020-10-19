@@ -1,3 +1,5 @@
+import { CartService } from './../../cart.service';
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GrupoServicePage implements OnInit {
 
-  constructor() { }
+  classes = [];
+
+  sliderConfig = {
+    spaceBetween: 9,
+    centeredSlides: true,
+    slidesPerView: 1.3
+  }
+  constructor(private cartService: CartService, private router: Router) { }
 
   ngOnInit() {
+    this.classes = this.cartService.getClasses();
+    console.log(this.classes)
   }
-
+  
 }
