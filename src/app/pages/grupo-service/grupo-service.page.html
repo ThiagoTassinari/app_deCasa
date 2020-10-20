@@ -38,12 +38,11 @@
                 <ion-card-header>
                   <ion-card-title>
                     <ion-icon size="large" [name]="classe_informatica.icon"></ion-icon>
-                    {{ classe_informatica.name }}
                   </ion-card-title>
                 </ion-card-header>
 
                 <ion-card-content>
-
+                  {{ classe_informatica.name }}
                 </ion-card-content>
 
               </ion-card>
@@ -52,8 +51,8 @@
         </ion-row>
       </ion-grid>
 
-      <ion-list no-lines>
-        <ion-item button *ngFor="let classe_informatica of classes">
+      <ion-list no-lines *ngIf = "!showCard">
+        <ion-item button *ngFor="let classe_informatica of classes">  
           <ion-icon class="ion-margin-end" name="laptop-outline" item-start></ion-icon>
           <ion-label>
           {{ classe_informatica.name }}

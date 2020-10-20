@@ -1,3 +1,4 @@
+import { GruposPageModule } from './../grupos/grupos.module';
 import { HomePage } from './home.page';
 import { Routes, RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
@@ -9,7 +10,16 @@ const routes: Routes = [
     children: [
       {
         path: "inicio",
-        loadChildren: () => import('../inicio/inicio.module').then(m => m.InicioPageModule)
+        children: [
+          {
+            path: '',
+            loadChildren: () => import('../inicio/inicio.module').then(m => m.InicioPageModule)
+          },
+          {
+            path: 'grupo-service',
+            loadChildren: () => import('../grupo-service/grupo-service.module').then(m => m.GrupoServicePageModule)
+          }
+        ]
       },
       {
         path: "perfis",
@@ -34,9 +44,9 @@ const routes: Routes = [
     ]
   },
   {
-        path: '',
-        redirectTo:'tabs/inicio',
-        pathMatch: 'full'
+    path: '',
+    redirectTo: 'tabs/inicio',
+    pathMatch: 'full'
   }
 ];
 
