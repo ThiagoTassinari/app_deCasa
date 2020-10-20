@@ -18,7 +18,6 @@ export class InicioPage implements OnInit {
 cart = [];
 items = [];
 
-
 constructor(private cartService: CartService, private router: Router) { }
 
 ngOnInit() {

@@ -1,6 +1,6 @@
-  ion-slides {
+ion-slides {
     height: auto;
-  }  
+  } 
 
   .vertical {
     display: flex;
@@ -17,11 +17,11 @@
     height: 100px !important;
   }
   
-    .bg-img{
-      width: 100% !important;
-      height: 100% !important;
-      border-radius: 10%;
-    }
+  .bg-img{
+    width: 100% !important;
+    height: 100% !important;
+    border-radius: 10%;
+  }
 
 ion-badge {
   color: #fff;
@@ -44,7 +44,8 @@ ion-card {
 }
 
 ion-icon {
-  font-size: 28px;
+  font-size: 24px;
+  padding: 0%;
 }
 
 ion-card-content {
@@ -54,10 +55,3 @@ ion-card-content {
   font-size: 10px;
   color: black;
 }
-// .category.banner {
-//   border-left: 8px solid var(--ion-color-secondary);
-//   background: var(--ion-color-light);
-//   height: 40px;
-//   padding: 10px;
-//   font-weight: 500;
-// }
