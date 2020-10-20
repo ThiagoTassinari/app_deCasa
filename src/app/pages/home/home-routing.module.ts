@@ -18,7 +18,11 @@ const routes: Routes = [
           {
             path: 'grupo-service',
             loadChildren: () => import('../grupo-service/grupo-service.module').then(m => m.GrupoServicePageModule)
-          }
+          },
+          {
+            path: 'list-service',
+            loadChildren: () => import('../list-service/list-service.module').then(m=>m.ListServicePageModule)
+          },
         ]
       },
       {
@@ -40,7 +44,11 @@ const routes: Routes = [
       {
         path: 'grupo-servico',
         loadChildren: () => import('../grupo-service/grupo-service.module').then(m => m.GrupoServicePageModule)
-      }
+      },
+      {
+        path: 'list-service',
+        loadChildren: () => import('../list-service/list-service.module').then(m=>m.ListServicePageModule)
+      },
     ]
   },
   {

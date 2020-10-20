@@ -3,41 +3,44 @@
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
-    <ion-title>Classes</ion-title>
+    <ion-title>list-service</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
 
+  <!--------------------------Faça sua busca--------------------------------->
+
   <ion-item>
     <ion-input class="ion-text-center" placeholder="Faça sua busca"></ion-input>
   </ion-item>
 
-  <!--Faça sua busca-->
+  <!-------------------------------Ícones------------------------------------>
 
   <div class="filter">
     <ion-icon name="list-sharp" (click)="showCard=false"></ion-icon>
     <ion-icon name="apps-sharp" (click)="showCard=true"></ion-icon>
+    <ion-icon name="funnel-sharp"></ion-icon>
   </div>
 
-  <!--------------Descrição das Classes---------------->
+  <!--------------------------Descrição das Classes--------------------------->
 
   <div class="ion-padding">
     <ion-row>
       <ion-col>
         <div class="ion-float-left">
-          <strong>Escolha uma Classe</strong>
+          <strong>Adicione serviços ao seu carrinho</strong>
         </div>
       </ion-col>
     </ion-row>
 
-    <!------------------------- Cards das Classes de Serviços --------------------->
+    <!-------------------------Ação do ícone List dos cards----------------------->
     <div class="category-block">
-      <ion-grid *ngIf = "showCard">
+      <ion-grid *ngIf="showCard">
         <ion-row>
           <ion-col size="4" *ngFor="let classe_informatica of classes">
             <div class="ion-text-center">
-              <ion-card routerLink="/home/tabs/inicio/list-service/">
+              <ion-card padding routerLink="/home/tabs/inicio/list-service/">
                 <ion-card-header>
                   <ion-card-title>
                     <ion-icon size="large" [name]="classe_informatica.icon"></ion-icon>
@@ -54,16 +57,18 @@
         </ion-row>
       </ion-grid>
 
-      <ion-list routerLink="/home/tabs/inicio/list-service/" no-lines *ngIf = "!showCard">
-        <ion-item button *ngFor="let classe_informatica of classes">  
+      <!--------------------------------Chamando a lista------------------------------->
+
+      <ion-list no-lines *ngIf="!showCard">
+        <ion-item button *ngFor="let classe_informatica of classes">
           <ion-icon class="ion-margin-end" name="laptop-outline" item-start></ion-icon>
-          <ion-label>
-          {{ classe_informatica.name }}
-        </ion-label>
-        </ion-item>  
+          <ion-label class="ion-text-wrap">
+            {{ classe_informatica.name }}
+            <ion-icon class="ion-float-right" name="add-outline"></ion-icon>
+            <ion-icon class="ion-float-right" name="caret-down-sharp"></ion-icon>
+          </ion-label>
+        </ion-item>
       </ion-list>
     </div>
   </div>
-
 </ion-content>
-

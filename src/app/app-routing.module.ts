@@ -20,8 +20,8 @@ const routes: Routes = [
     loadChildren: () => import('./pages/grupo-service/grupo-service.module').then( m => m.GrupoServicePageModule)
   },
   {
-    path: 'cart-service',
-    loadChildren: () => import('./pages/cart-service/cart-service.module').then( m => m.CartServicePageModule)
+    path: 'list-service',
+    loadChildren: () => import('./pages/list-service/list-service.module').then( m => m.ListServicePageModule)
   },
 ];
 
