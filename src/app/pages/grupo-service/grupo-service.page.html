@@ -6,6 +6,17 @@
 
 <ion-content>
 
+  <ion-item>
+    <ion-input class="ion-text-center" placeholder="Faça sua busca"></ion-input>
+  </ion-item>
+
+  <!--Faça sua busca-->
+
+  <div class="filter">
+    <ion-icon name="list-sharp" (click)="showCard=false"></ion-icon>
+    <ion-icon name="apps-sharp" (click)="showCard=true"></ion-icon>
+  </div>
+
   <!--------------Descrição das Classes---------------->
 
   <div class="ion-padding">
@@ -17,11 +28,9 @@
       </ion-col>
     </ion-row>
 
-    <ion-icon name="list-sharp"></ion-icon><ion-icon name="apps-sharp"></ion-icon>
-
     <!------------------------- Cards das Classes de Serviços --------------------->
     <div class="category-block">
-      <ion-grid>
+      <ion-grid *ngIf = "showCard">
         <ion-row>
           <ion-col size="4" *ngFor="let classe_informatica of classes">
             <div class="ion-text-center">
@@ -43,9 +52,16 @@
         </ion-row>
       </ion-grid>
 
+      <ion-list no-lines>
+        <ion-item button *ngFor="let classe_informatica of classes">
+          <ion-icon class="ion-margin-end" name="laptop-outline" item-start></ion-icon>
+          <ion-label>
+          {{ classe_informatica.name }}
+        </ion-label>
+        </ion-item>  
+      </ion-list>
     </div>
   </div>
 
 </ion-content>
 
-<ion-tabs routerLink="/tabs/home/detail">Next</ion-tabs>

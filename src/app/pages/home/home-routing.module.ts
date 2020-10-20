@@ -8,24 +8,28 @@ const routes: Routes = [
     component: HomePage,
     children: [
       {
-        path: 'inicio',
+        path: "inicio",
         loadChildren: () => import('../inicio/inicio.module').then(m => m.InicioPageModule)
       },
       {
-        path: 'perfis',
+        path: "perfis",
         loadChildren: () => import('../perfis/perfis.module').then(m => m.PerfisPageModule)
       },
       {
-        path: 'compras',
+        path: "compras",
         loadChildren: () => import('../compras/compras.module').then(m => m.ComprasPageModule)
       },
       {
-        path: 'grupos',
+        path: "grupos",
         loadChildren: () => import('../grupos/grupos.module').then(m => m.GruposPageModule)
       },
       {
-        path: 'servicos',
+        path: "servicos",
         loadChildren: () => import('../servicos/servicos.module').then(m => m.ServicosPageModule)
+      },
+      {
+        path: 'grupo-servico',
+        loadChildren: () => import('../grupo-service/grupo-service.module').then(m => m.GrupoServicePageModule)
       }
     ]
   },

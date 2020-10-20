@@ -10,6 +10,7 @@ import { Component, OnInit } from '@angular/core';
 export class GrupoServicePage implements OnInit {
 
   classes = [];
+  showCard = false;
 
   sliderConfig = {
     spaceBetween: 9,
