@@ -3,7 +3,6 @@
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
-    <ion-title>list-service</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -61,12 +60,11 @@
 
       <ion-list no-lines *ngIf="!showCard">
         <ion-item button *ngFor="let classe_informatica of classes">
-          <ion-icon class="ion-margin-end" name="laptop-outline" item-start></ion-icon>
-          <ion-label class="ion-text-wrap">
+          <ion-label class="ion-text-wrap ion-margin-start" >
             {{ classe_informatica.name }}
-            <ion-icon class="ion-float-right" name="add-outline"></ion-icon>
-            <ion-icon class="ion-float-right" name="caret-down-sharp"></ion-icon>
           </ion-label>
+          <ion-icon slot="end" name="caret-down-sharp"></ion-icon>
+          <ion-icon slot="end" name="add-outline"></ion-icon>
         </ion-item>
       </ion-list>
     </div>
