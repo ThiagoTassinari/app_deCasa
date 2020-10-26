@@ -37,17 +37,15 @@
     <div class="category-block">
       <ion-grid *ngIf="showCard">
         <ion-row>
-          <ion-col size="4" *ngFor="let classe_informatica of classes">
+          <ion-col size="4" *ngFor="let classe_informatica of servicos">
             <div class="ion-text-center">
               <ion-card padding routerLink="/home/tabs/inicio/list-service/">
                 <ion-card-header>
-                  <ion-card-title>
-                    <ion-icon size="large" [name]="classe_informatica.icon"></ion-icon>
-                  </ion-card-title>
+
                 </ion-card-header>
 
                 <ion-card-content>
-                  {{ classe_informatica.name }}
+                  {{ classe_informatica.nome }}
                 </ion-card-content>
 
               </ion-card>
@@ -58,15 +56,31 @@
 
       <!--------------------------------Chamando a lista------------------------------->
 
-      <ion-list no-lines *ngIf="!showCard">
-        <ion-item button *ngFor="let classe_informatica of classes">
-          <ion-label class="ion-text-wrap ion-margin-start" >
-            {{ classe_informatica.name }}
+      <ion-list *ngIf="!showCard">
+        <ion-item button (click)="expandServico(servico)" *ngFor="let servico of servicos">
+
+          <ion-list-header>
+            <ion-label>
+              {{ servico.nome }}
+            </ion-label>
+            
+              <ion-icon class="ion-float-right" name="caret-down-sharp"></ion-icon>
+              <ion-icon class="ion-float-right" name="add-outline"></ion-icon>
+          </ion-list-header>
+
+          <!--  <ion-label> 
+            <b>Inclusos: </b>{{ servico.inclusos }}<br />
+            <b><br />Exclusos: </b>{{ servico.exclusos }}
           </ion-label>
-          <ion-icon slot="end" name="caret-down-sharp"></ion-icon>
-          <ion-icon slot="end" name="add-outline"></ion-icon>
+ -->
+          <expandable [expandHeight]="servicosExpandHeight" [servico]="servico" [expanded]="servico.expanded">
+          </expandable>
+          <button clear item-end></button>
         </ion-item>
+
       </ion-list>
+
     </div>
   </div>
+
 </ion-content>

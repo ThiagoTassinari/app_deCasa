@@ -3,7 +3,6 @@
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
-    <ion-title>Classes</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -54,6 +53,7 @@
         </ion-row>
       </ion-grid>
 
+      <!---------------------------Lista de Cards das Classes de Serviço--------------------------->
       <ion-list routerLink="/home/tabs/inicio/list-service/" no-lines *ngIf = "!showCard">
         <ion-item button *ngFor="let classe_informatica of classes">  
           <ion-icon class="ion-margin-end" name="laptop-outline" item-start></ion-icon>
