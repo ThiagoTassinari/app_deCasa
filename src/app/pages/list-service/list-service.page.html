@@ -58,17 +58,14 @@
 
       <ion-list *ngIf="!showCard">
         <ion-item button (click)="expandServico(servico)" *ngFor="let servico of servicos">
+          <ion-label>
+            {{ servico.nome }}
+          </ion-label>
+          
+                    <ion-icon class="ion-float-right" name="caret-down-sharp"></ion-icon>
+                    <ion-icon class="ion-float-right" name="add-outline"></ion-icon>
 
-          <ion-list-header>
-            <ion-label>
-              {{ servico.nome }}
-            </ion-label>
-            
-              <ion-icon class="ion-float-right" name="caret-down-sharp"></ion-icon>
-              <ion-icon class="ion-float-right" name="add-outline"></ion-icon>
-          </ion-list-header>
-
-<!--            <ion-label> 
+          <!--            <ion-label> 
             <b>Inclusos: </b>{{ servico.inclusos }}<br />
             <b><br />Exclusos: </b>{{ servico.exclusos }}
           </ion-label>
