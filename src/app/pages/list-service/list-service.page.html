@@ -37,7 +37,7 @@
     <div class="category-block">
       <ion-grid *ngIf="showCard">
         <ion-row>
-          <ion-col size="4" *ngFor="let classe_informatica of servicos">
+          <ion-col size="4" *ngFor="let classe_informatica of services">
             <div class="ion-text-center">
               <ion-card padding routerLink="/home/tabs/inicio/list-service/">
                 <ion-card-header>
@@ -56,24 +56,31 @@
 
       <!--------------------------------Chamando a lista------------------------------->
 
-      <ion-list *ngIf="!showCard">
-        <ion-item button (click)="expandServico(servico)" *ngFor="let servico of servicos">
-          <ion-label>
-            {{ servico.nome }}
-          </ion-label>
-          
-                    <ion-icon class="ion-float-right" name="caret-down-sharp"></ion-icon>
-                    <ion-icon class="ion-float-right" name="add-outline"></ion-icon>
+      <ion-list class="child-item" *ngFor="let servico of services" detail="false" lines="none">
 
-          <!--            <ion-label> 
-            <b>Inclusos: </b>{{ servico.inclusos }}<br />
-            <b><br />Exclusos: </b>{{ servico.exclusos }}
+        <ion-item button>
+          <ion-label [ngStyle]="{'color':showService == servico.id ? '#0a68ae' : 'black' }">
+            <h3><b>{{ servico.name }}</b></h3>
           </ion-label>
- -->
-          <expandable [expandHeight]="servicosExpandHeight" [servico]="servico" [expanded]="servico.expanded">
-          </expandable>
-          <button clear item-end></button>
+
+          <ion-icon (click)="showListService(servico.id)" *ngIf="showService != servico.id" name="chevron-down-outline"></ion-icon>
+          <ion-icon name="chevron-up-outline" (click)="showService = 0" *ngIf="showService == servico.id"></ion-icon>
+          <ion-icon (click)="addCart()" name="add-outline" slot="end"></ion-icon>
+
         </ion-item>
+
+        <ion-list *ngIf="showService == servico.id" no-padding>
+          <ion-item no-padding>
+            <ion-label class="ion-text-wrap">
+              <b>Inclusos:</b>
+               {{ servico.inclusos }}
+              <br/>
+              <br/>
+              <b>Exclusos:</b>
+               {{ servico.exclusos}}
+            </ion-label>
+          </ion-item>
+        </ion-list>
 
       </ion-list>
 

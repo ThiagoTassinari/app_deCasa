@@ -10,50 +10,64 @@ import { NavController } from '@ionic/angular';
 export class ListServicePage implements OnInit {
 
   showCard = false;
-  servicos: any = [];
-  servicosExpanded: boolean = false;
-  servicosExpandHeight: number = 200;
-  servicosInEx: [];
+  services: any = [];
+  showService = 0;
 
   constructor(public navCrtl: NavController, private cartService: CartService) {
 
-    this.servicos = [
-      { nome:'Formatação de PC', 
+    this.services = [
+      { 
+        id: 1,
+        name:'Formatação de PC', 
         inclusos: 'Visita Técnica do prestador de serviço',
         exclusos: 'Material não incluso precisando de um armazenamento físico externo pelo usuário',
         expanded: false,
       },
-      { nome:'Backup de PC e notebook', 
+      { 
+        id: 2,
+        name:'Backup de PC e notebook', 
         inclusos: 'Visita Técnica do prestador de serviço',
         exclusos: 'Material não incluso precisando de um armazenamento físico externo pelo usuário',
         expanded: false
       },
-      { nome:'Instalação de softwares',
+      { 
+        id: 3,
+        name:'Instalação de softwares',
         inclusos: 'Visita Técnia',
         exclusos: 'Aumento da quantidade de serviços no momento do serviço prestado',
         expanded: false 
       },
-      { nome:'Instalação de hardwares',
+      { 
+        id: 4,
+        name:'Instalação de hardwares',
         inclusos: 'Visita técnica',
         exclusos: 'Aumento da quantidade de serviços no momento do serviço prestado',
         expanded: false 
       },
-      { nome:'Instalação de sistemas operacionais', 
+      { 
+        id: 5,
+        name:'Instalação de sistemas operacionais', 
         inclusos: 'Visita Técnica',
         exclusos: 'Aumento da quantidade de serviços no momento do serviço prestado', 
         expanded: false 
       },
-      { nome:'Serviços gerenciados de TI',
+      { 
+        id: 6,
+        name:'Serviços gerenciados de TI',
         inclusos: 'Checagem de todas as tarefas apresentadas na empresa',
         exclusos: '',
         expanded: false
       },
-      { nome:'Rollout de notebook',
+      { 
+        id: 7,
+        name:'Rollout de notebook',
         inclusos: '',
         exclusos: '',
         expanded: false 
       },
-      { nome:'Checkup dos equipamentos',
+      { 
+        id: 8,
+        name:'Checkup dos equipamentos',
         inclusos: '',
         exclusos: '',
         expanded: false 
@@ -61,10 +75,14 @@ export class ListServicePage implements OnInit {
     ];
   }
 
-  expandServico(classe_informatica) {
-    classe_informatica.expanded = !classe_informatica.expanded;
+  showListService(serviceId) {
+    this.showService = serviceId;
   }
 
+  addCart() {
+
+  }
+  
   ngOnInit() { 
 
    }
